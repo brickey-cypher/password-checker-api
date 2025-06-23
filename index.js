@@ -28,7 +28,20 @@ app.post("/check", (req, res) => {
     if (code !== 0) {
       return res.status(500).json({ error: "Checker process failed" });
     }
-      res.json({ result: output.trim() });
-    });
+
+    try {
+      const result = JSON.parse(output);
+      res.json(result);
+    } catch (err) {
+      res.status(500).json({ error: "Failed to parse checker output" });
+    }
   });
+
+  checker.stdin.write(password + "\n");
+  checker.stdin.end();
+});
+
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+
 
