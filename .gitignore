@@ -16,3 +16,5 @@ include/json.hpp
 # OS-specific
 .DS_Store
 Thumbs.db
+
+checker.exe
