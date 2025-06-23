@@ -9,3 +9,5 @@ g++ -std=c++17 checker.cpp -o checker -Iinclude
 
 chmod +x checker
 
+echo "Listing files after build:"
+ls -l
