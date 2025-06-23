@@ -1,0 +1,18 @@
+# Node modules (even if you're not using them yet)
+node_modules/
+
+# Compiled binary
+checker
+
+# JSON header (optional, since you redownload it anyway)
+include/json.hpp
+
+# VSCode junk
+.vscode/
+
+# Log files
+*.log
+
+# OS-specific
+.DS_Store
+Thumbs.db
