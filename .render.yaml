@@ -2,7 +2,6 @@ services:
   - type: web
     name: password-checker-api
     env: node
-    buildCommand: ./build.sh && ls -l && npm install
     startCommand: npm start
     envVars:
       - key: NODE_ENV
