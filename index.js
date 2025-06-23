@@ -15,6 +15,11 @@ app.post("/check", (req, res) => {
   const checkerPath = path.join(__dirname, "checker");
   const checker = spawn(checkerPath);
 
+checker.on('error', (err) => {
+  console.error('Failed to start checker process:', err);
+  res.status(500).json({ error: 'Checker process failed to start' });
+});
+
   let output = "";
   checker.stdout.on("data", (data) => {
     output += data.toString();
